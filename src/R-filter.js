@@ -15,6 +15,12 @@ angular.module('app', []).factory('R_filter', [
       return groupByKey(target);
     };
 
+    service.filterAndGroup = function (properties_and_values, key, target) {
+      var f = R.curry(service.filter)(properties_and_values);
+      var g = R.curry(service.groupBy)(key);
+      return R.compose(g, f)(target);
+    };
+
     return service;
   }
 ]);

@@ -47,8 +47,8 @@ describe('R_filter,', function () {
     });
   });
 
-  describe('usage examples', function () {
-    it('grouping all males users by ranks', function () {
+  describe('filterAndGroup', function () {
+    it('shoud group all males users by ranks', function () {
       var filter_attrs = {gender: 'Male'};
       var group_attr = 'rank';
       var males_grouped_by_rank = service.filterAndGroup(filter_attrs, group_attr, users);
